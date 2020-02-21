@@ -15,7 +15,7 @@ else{
     //$password=$_POST['psw'];
     if($username==$username){
         $_SESSION['username']=$username;
-        header("Location:index.php");
+        header("Location:index.html");
         var_dump($_SESSION);
     }
     else{

@@ -9,15 +9,18 @@
 <body>
 <div class="percel_container">
     <h1>Percel Information</h1>
-  <form action="/action_page.php">
+    <div class="button button1">
+    <a href="view_percel_info.php">Percel Information</a></div>
+  
+  <form action="percelconn.php" method="POST">
     <label for="courierno">Courier No</label>
     <input type="text" id="fname" name="courierno" placeholder="Courier No">
     <label for="percelweight">Percel Weight</label>
-    <input type="text" id="pw" name="adate" placeholder="Percel Weight">
+    <input type="text" id="pw" name="pw" placeholder="Percel Weight">
     <br><br>
 
     <label for="payment">Payment:</label>
-    <input type="text" id="payment" name="sdate" placeholder="Amount to pay">
+    <input type="text" id="payment" name="payment" placeholder="Amount to pay">
     <label for="city"> Where to Sent:</label>
     <select id="city" name="city">
       <option value="Dhaka">Dhaka</option>

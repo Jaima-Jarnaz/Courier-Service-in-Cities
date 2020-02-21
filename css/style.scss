@@ -1,7 +1,7 @@
 $colors:(
     color-1:#CDDC39,
     color-2:#e91999,
-    color-3:#5a39dc
+    color-3:#6139dc
 );
 @function color($colorName){
     @return map-get($map: $colors, $key: $colorName);
@@ -11,7 +11,7 @@ body{
     .container{
         width: 100%;
         height: 100%;
-        background-color: color(color-1);
+        background-color: color(color-3);
        clip-path: polygon(0% 15%, 41% 0, 0 21%, 56% 1%, 0 31%, 0 58%, 100% 100%, 0 100%, 0 99%, 0 82%, 98% 100%, 0 74%);
         position: absolute;
         z-index: -1;
@@ -37,7 +37,7 @@ body{
     }
     .block {
         display: block;
-        width: 48%;
+        width: 11%;
         color: color(color-3);
         padding: 14px 28px;
         font-size: 16px;
@@ -47,13 +47,13 @@ body{
         margin: 15px;
         border-style: outset;
         border-color: lavender;
+        text-decoration: none;
       }
       .block:hover{
         background-color:color(color-3);
         color:white;
       }
       .percel_container{
-        border-radius: 5px;
         background-color: #f2f2f2;
         padding: 20px;
         width: 70%;
@@ -62,11 +62,10 @@ body{
 
         input[type=text], select {
             width: 40%;
-            padding: 12px 20px;
-            margin: 8px 0;
+            padding: 13px 13px;
+            margin: 12px 0;
             display: inline-block;
             border: 1px solid #ccc;
-            border-radius: 4px;
             box-sizing: border-box;
           }
           
@@ -84,12 +83,43 @@ body{
           input[type=submit]:hover {
             background-color: #45a049;
           }
+          input[type=date] {
+            width: 37%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+        }
           label{
             font-weight: inherit;
+            margin: 3px;
 
           }
           
+      .button{
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
       }
+      
+      .button1 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid #4CAF50;
+      }
+      
+      .button1:hover {
+        background-color: #4CAF50;
+        color: white;
+      }
+    }
       
 
 }
