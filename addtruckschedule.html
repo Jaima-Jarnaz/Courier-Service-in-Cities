@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Truck Schedule</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+.div1{
+  background-color:#171111;
+  padding: 20px;
+  width: 70%;
+   margin: auto;
+   margin-top: 15px;
+}
+  </style>
+</head>
+<body>
+  <div class="div1">
+    <h1 class="text-white text-center">Truck Information</h1>
+    <div class="button1">
+      <a class="btn btn-info" href="view_truck_info.php">View</a>
+      <a class="btn btn-info" href="history.php">History</a>
+    </div>
+<div class="form-style-8">
+  <h2>Add Truck Schedule</h2>
+  <form action="insert_truck.php" method="post">
+    <input type="text" name="field1" placeholder="Truck ID" />
+    <input type="text" name="field2" placeholder="Driver Name" />
+    <select id="city" name="field3">
+      <option value="Dhaka">Dhaka</option>
+      <option value="Khulna">Barishal</option>
+      <option value="Chittagong">Chittagong</option>
+      <option value="Mymensingh">Mymensingh</option>
+      <option value="Khulna">Khulna</option>
+      <option value="Rajshahi">Rajshahi</option>
+      <option value="Rangpur">Rangpur</option>
+      <option value="Sylhet">Sylhet</option>
+    </select>
+    <input type="date" name="field4" placeholder="Sending Date" />
+    <input class="btn" type="submit" value="Enter" />
+  </form>
+</div>
+</div>
+</body>
+</html>

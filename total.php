@@ -3,42 +3,31 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/bootstrap.min.css"> 
    <title>Payment</title>
    <style>
-        .mid_container{
-    background-color: #9e9e9e2e;
-    padding: 40px;
-    width: 70%;
+      .div1{
+        background-color: #171111;
+    padding: 75px;
+    width: 64%;
     margin: auto;
-    margin-top: 15px;
-    padding-bottom: 30%;
-    border-style: hidden;
-    text-align: center;
-    }
-    .pay_bar{
-      width: 30%;
-    }
-    .pay_bar input{
-      width: 50%;
-      padding:12px;
-      margin:auto;
-      
-
-    }
-   </style>
+    margin-top: 40px;
+}
+    </style>
 </head>
 <body>
-<div class="mid_container">
-   <h2>Generate Payment</h2>
-   <form  class="pay_bar"  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  <input type="text" placeholder="Enter Courier No.." name="courierno">
-  <button type="submit">Enter</button>
-</form>
-
-
+<div class="div1 table-responsive">
+<table class="container table  table-striped w-75 text-white">
+  <thead class="">
+  <th>Courier No</th>
+  <th>Sent To</th>
+  <th>Ariving Date</th>
+  <th>Payment</th>
+  <th>Total Amount </th>
+  </thead>
 <?php
 require_once("config.php");
-global $connect,$payment,$weight,$city,$total,$courier;
+global $connect,$payment,$weight,$city,$total,$courier,$date;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
    if (empty($_POST["courierno"])) {
    echo "Courier No is required...";
@@ -52,13 +41,41 @@ while($row=mysqli_fetch_array($result)){
   $city=$row['Place_to_Sent'];
   $weight=$row['Percel_Weight'];
   $payment=$row['Payment'];
+  $date=$row['Ariving_date'];
 }
-if($city=='Jassor'){
-   $total=($weight*$payment)+150;
+if($city=='Barishal'){
+  $total=($weight*$payment)+300;
 }
-echo $total;
+elseif($city=='Chittagong'){
+  $total=($weight*$payment)+200;
+}
+elseif($city=='Mymensingh'){
+  $total=($weight*$payment)+100;
+}
+elseif($city=='Khulna'){
+  $total=($weight*$payment)+200;
+}
+elseif($city=='Rajshahi'){
+  $total=($weight*$payment)+250;
+}
+elseif($city=='Rangpur'){
+  $total=($weight*$payment)+250;
+}
+elseif($city=='Sylhet'){
+   $total=($weight*$payment)+350;
+}
+else{
+  die("Record not find");
+}
+echo "<tr>
+<td>".$courier."</td>
+<td>".$city."</td>
+<td>".$date."</td>
+<td>".$payment."</td>
+<td>".$total."</td>
+</tr>";
+echo "</table>";
 ?>
 </div>
-   
-</body>
-</html>
+ </body>
+ </html>

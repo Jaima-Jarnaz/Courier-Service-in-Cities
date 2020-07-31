@@ -1,0 +1,52 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+body nav {
+  background-color: #03A9F4;
+  height: 100%;
+  width: 22%;
+  position: fixed;
+}
+
+body nav ul {
+  margin-top: 70px;
+  margin-left: 40px;
+}
+
+body nav li {
+  padding: 20px;
+  list-style: none;
+}
+
+body nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+}
+
+body section {
+  width: 72%;
+  margin: 20px;
+  padding: 20px;
+  padding-bottom: 40%;
+  background-color: #e3eef3;
+  float: right;
+}
+
+body section .imgbox {
+  display: inline-block;
+}
+
+body section .imgbox img {
+  width: 288px;
+  float: left;
+  padding: 16px;
+  border-radius: 30px;
+}
+/*# sourceMappingURL=style2.css.map */
